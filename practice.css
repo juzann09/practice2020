@@ -28,20 +28,20 @@ border-radius: 50px;
 nav {
 display: flex;
 flex-direction: column;
-width: 100px;
+width: 80px;
 background: #FF5800;
 border-radius: 38px 0px 0px 38px;
 }
 
 .menuItem{
-margin: 20px 10px 20px 10px;
+margin: 10px 15px 10px 15px;
 opacity: 0.75;
 }
 
 #ellipsesGroup1{
 position: absolute;
 left: 60px;
-top: 60px;
+top: 40px;
 }
 
 #ellipsesGroup2{
