@@ -1,0 +1,57 @@
+html {
+height: 100%;
+width: 100%;
+background: #C2DAFF;
+}
+
+body {
+display: flex;
+height: 100%;
+width: 100%;
+margin: 0px;
+}
+
+.main-panel {
+z-index: 1;
+display: grid;
+grid-template-columns: 100px auto;
+grid-template-rows: 100%;
+grid-template-areas: "sidebar main";
+width: 80%;
+height: 80%;
+margin: auto;
+background: #F4F6F9;
+box-shadow: 5px 7px 40px rgba(0, 0, 0, 0.2);
+border-radius: 50px;
+}
+
+nav {
+display: flex;
+flex-direction: column;
+width: 100px;
+background: #FF5800;
+border-radius: 38px 0px 0px 38px;
+}
+
+.menuItem{
+margin: 20px 10px 20px 10px;
+opacity: 0.75;
+}
+
+#ellipsesGroup1{
+position: absolute;
+left: 60px;
+top: 60px;
+}
+
+#ellipsesGroup2{
+position: absolute;
+right: 60px;
+bottom: 20px;
+}
+
+.background{
+position: absolute;
+height:100%;
+width:100%;
+}
