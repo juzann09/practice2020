@@ -62,13 +62,10 @@ background: #FF5800;
 border-radius: 38px 0px 0px 38px;
 }
 
-object {
-}
-
 /*menu items*/
 .menuItem{
 opacity: 0.75;
-margin: 10px;
+margin: 20px 10px 10px 10px;
 width:70%;
 }
 
