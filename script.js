@@ -1,4 +1,3 @@
-
 			let radius = 4;
 			let spaceBetweenX = 20;
 			let spaceBetweenY = 30;
@@ -34,4 +33,38 @@
 				
 				str += "</svg>";
 				return str;
+			}
+			
+			/* menu items coloring & page choosing*/
+			
+			let pageChosen=0;
+			let pages = document.getElementsByClassName("page");
+			let menu = document.getElementsByClassName("menuItem");
+			
+			function setMenuOpacity(){				
+				for (let i=0; i < menu.length; i++){
+					menu[i].onmouseover = function(){
+						menu[i].style.opacity=1;	
+					};
+					menu[i].onmouseout = function(){
+						if (pageChosen!=i) menu[i].style.opacity=0.75;
+					};
+					menu[i].onclick = function(){
+						if (pageChosen!=i){
+							hidePage(pageChosen);
+							showPage(i);
+							menu[pageChosen].style.opacity=0.75;
+							pageChosen = i;
+							menu[i].style.opacity=1;
+						}
+					};
+				}
+			}
+			
+			function showPage(number){
+				pages[number].style.display="flex";
+			}
+			
+			function hidePage(number){
+				pages[number].style.display="none";
 			}

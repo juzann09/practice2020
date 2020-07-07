@@ -16,11 +16,23 @@ margin: 0px;
 
 main{
 display: flex;
+width: 100%;
 }
 
 .page{
-display: flex;
 width: 100%;
+display: none;
+flex-direction: column;
+}
+
+#home{
+flex-direction: row;
+}
+
+.pageTitle{
+font-size: 32px;
+line-height: 42px;
+padding: 20px 10px 10px 30px;
 }
 
 .main-panel {
@@ -51,15 +63,20 @@ border-radius: 38px 0px 0px 38px;
 }
 
 object {
-
 }
 
 /*menu items*/
-nav *{
-margin: 10px;
+.menuItem{
 opacity: 0.75;
+margin: 10px;
 width:70%;
 }
+
+#earth{
+opacity: 0.75;
+}
+
+/*backgtound*/
 
 #ellipsesGroup1{
 position: absolute;
@@ -79,6 +96,9 @@ height:100%;
 width:100%;
 }
 
+
+/*main block*/
+
 .mainInfo{
 width: 50%;
 height: 100%;
@@ -88,8 +108,6 @@ min-width: 390px;
 justify-content: space-evenly;
 margin-left: 30px;  
 }
-
-/*info blocks styles*/
 
 /*block itself*/
 .infoBlock{
