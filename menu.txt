@@ -1,0 +1,14 @@
+<nav>
+				<object type="image/svg+xml" data="earth.svg">
+				   Your browser does not support SVG
+				</object>
+				<object type="image/svg+xml" data="rocket1.svg">
+				   Your browser does not support SVG
+				</object>
+				<object type="image/svg+xml" data="astronaut.svg">
+				   Your browser does not support SVG
+				</object>
+				<object type="image/svg+xml" data="thermometer.svg">
+				   Your browser does not support SVG
+				</object>
+			</nav>
