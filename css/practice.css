@@ -151,12 +151,15 @@ align-self: center;
 background: #E4E4E4;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
 border-radius: 10px;
-width: 100px;
-height: 20px;
+width: 150px;
+height: 30px;
 display: flex;
 justify-content: center;
 align-items: center;
-color: #999999
+color: #999999;
+font-weight: bold;
+font-size: 16px;
+line-height: 19px;
 }
 
 /* line with info*/
@@ -169,8 +172,6 @@ color: #999999
 
 .checkbox.checked:before {
     color: #73E24D; /* Цвет маркера */
-    content: "\1F534"; /* Сам маркер */
-    padding-right: 5px; /* Расстояние от маркера до текста */
 }
 
 .infoBlockContent li{
