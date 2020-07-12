@@ -1,0 +1,270 @@
+html {
+height: 100%;
+width: 100%;
+background: #C2DAFF;
+font-family: 'Roboto', sans-serif;
+font-style: normal;
+font-size: 18px;
+line-height: 21px;
+}
+
+body {
+display: flex;
+height: 100%;
+width: 100%;
+margin: 0px;
+}
+
+main{
+height: max-content;
+min-height: 100%;
+display: flex;
+width: 100%;
+}
+
+.page{
+width: 100%;
+display: none;
+flex-direction: column;
+}
+
+.page.visible{
+display: flex;
+}
+
+#home{
+flex-direction: row;
+}
+
+.pageTitle{
+font-size: 32px;
+line-height: 42px;
+padding: 20px 10px 10px 30px;
+}
+
+.main-panel {
+width: 80%;
+height: max-content;
+min-height: 80%;
+z-index: 1;
+display: grid;
+grid-template-columns: 118px auto;
+grid-template-rows: 100%;
+grid-template-areas: "sidebar main";
+margin: auto;
+background: #F4F6F9;
+box-shadow: 5px 7px 40px rgba(0, 0, 0, 0.2);
+border-radius: 50px;
+min-width: max-content;
+overflow: hidden;
+}
+
+
+/*menu*/
+nav {
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+align-items: center;
+width: 118px;
+background: #FF5800;
+border-radius: 38px 0px 0px 38px;
+}
+
+/*menu items*/
+.menuItem{
+width: 65px;
+height: 65px;
+margin: 20px auto 20px auto;
+	opacity: 0.75;
+}
+
+.menuItem.inactive:hover{
+	opacity: 1;
+}
+
+.menuItem.active{
+	opacity: 1;
+}
+.menuItem.inactive{
+	opacity:0.75;
+}
+
+#earth{
+width: 85px;
+height: 85px;
+}
+
+.background{
+position: absolute;
+height:100%;
+width:100%;
+}
+
+
+/*main block*/
+
+.mainInfo{
+min-width: max-content;
+min-height: max-content;;
+display: flex;
+flex-direction: column;
+margin-left: 30px;  
+}
+
+/*block itself*/
+.infoBlock{
+background: #FFFFFF;
+border-radius: 10px;
+display: flex;
+flex-direction: column;
+box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+min-width: max-content;
+padding: 5px;
+margin: 30px 0px 0px 0px;
+}
+
+/*head contains name and button*/
+.headLine{
+display: flex;
+padding: 10px 15px 10px 15px;
+border-bottom-color: #D8DCE3;
+border-bottom-width: 1px;
+border-bottom-style: solid;
+}
+
+.infoBlockContent{
+padding: 10px 15px 10px 15px;
+min-width: max-content;
+margin-block-start: 10px;
+margin-block-end: 10px;	
+}
+
+/*name of info block*/
+.blockName{
+flex: 1;
+font-weight: bold;
+align-self: center;
+}
+
+.button{
+background: #E4E4E4;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+border-radius: 10px;
+width: 100px;
+height: 20px;
+display: flex;
+justify-content: center;
+align-items: center;
+color: #999999
+}
+
+/* line with info*/
+
+.checkbox:before {
+    color: #FF7D84; /* Цвет маркера */
+    content: "\1F534"; /* Сам маркер */
+    padding-right: 5px; /* Расстояние от маркера до текста */
+}
+
+.checkbox.checked:before {
+    color: #73E24D; /* Цвет маркера */
+    content: "\1F534"; /* Сам маркер */
+    padding-right: 5px; /* Расстояние от маркера до текста */
+}
+
+.infoBlockContent li{
+list-style-type: none; /* Прячем исходные маркеры */
+display: flex;
+border-bottom-color: #D8DCE3;
+border-bottom-width: 1px;
+border-bottom-style: solid;
+padding: 7px;
+list-style-type: none; /* Убираем маркеры */
+min-width: max-content;
+}
+
+
+/* property name*/
+.infoBlockContent li :first-child{
+width: 166px;
+font-weight: bold;
+
+padding-left: 6px;
+    margin-right: 10px;
+}
+
+.property :first-child{
+	color: #0A5499;
+}
+.infoBlockContent li :last-child{
+min-width: max-content;
+}
+/*remove border of last line*/
+.infoBlockContent :last-child{
+border: none;
+}
+/* line in status block (with lightCircle)*/
+
+#status{
+font-size: 18px;
+line-height: 27px;
+
+}
+#status .infoBlockContent 
+{
+margin-block-start: 0px;
+margin-block-end: 0px;	
+}
+
+/* line in status block (with lightCircle)*/
+#status .infoBlockContent > li{
+display: flex;
+border: none;
+padding: 0px;
+align-items: center;
+}
+
+/*set width for lightCircle*/
+#status .infoBlockContent > li :first-child{
+width: 11px;
+min-width: auto;
+margin: 0px 5px 0px 0px;
+padding: 0px;
+}
+/**/
+.captain :first-child{
+color: #FF7D84;
+}
+.engineer :first-child{
+color: #E69F54;
+}
+.doctor :first-child{
+color: #64D03F;
+}
+.spaceMarine :first-child{
+color: #5A95F2;
+}
+
+.illustrations{
+justify-content: space-between;
+display: flex;
+flex-direction: column;
+flex: 1;
+}
+.spaceSVG{
+height: 100%;
+}
+.bigRocketSVG{
+transform: rotate(-45deg);
+height: 100%;
+}
+.r0 {
+margin: -60px -10px auto auto;
+height: 50%
+}
+.r1 {
+margin: auto auto 40px auto;
+height: 35%
+}
+
