@@ -3,8 +3,9 @@ height: 100%;
 width: 100%;
 background: #C2DAFF;
 font-family: 'Roboto', sans-serif;
-font-size: 13px;
-    line-height: 13px;
+font-style: normal;
+font-size: 18px;
+line-height: 21px;
 }
 
 body {
@@ -15,6 +16,8 @@ margin: 0px;
 }
 
 main{
+height: max-content;
+min-height: 100%;
 display: flex;
 width: 100%;
 }
@@ -23,6 +26,10 @@ width: 100%;
 width: 100%;
 display: none;
 flex-direction: column;
+}
+
+.page.visible{
+display: flex;
 }
 
 #home{
@@ -36,17 +43,19 @@ padding: 20px 10px 10px 30px;
 }
 
 .main-panel {
+width: 80%;
+height: max-content;
+min-height: 80%;
 z-index: 1;
 display: grid;
-grid-template-columns: 80px auto;
+grid-template-columns: 118px auto;
 grid-template-rows: 100%;
 grid-template-areas: "sidebar main";
-width: 80%;
-height: 85%;
 margin: auto;
 background: #F4F6F9;
 box-shadow: 5px 7px 40px rgba(0, 0, 0, 0.2);
 border-radius: 50px;
+min-width: max-content;
 overflow: hidden;
 }
 
@@ -57,34 +66,33 @@ display: flex;
 flex-direction: column;
 justify-content: flex-start;
 align-items: center;
-width: 80px;
+width: 118px;
 background: #FF5800;
 border-radius: 38px 0px 0px 38px;
 }
 
 /*menu items*/
 .menuItem{
-opacity: 0.75;
-margin: 20px 10px 10px 10px;
-width:70%;
+width: 65px;
+height: 65px;
+margin: 20px auto 20px auto;
+	opacity: 0.75;
+}
+
+.menuItem.inactive:hover{
+	opacity: 1;
+}
+
+.menuItem.active{
+	opacity: 1;
+}
+.menuItem.inactive{
+	opacity:0.75;
 }
 
 #earth{
-opacity: 1;
-}
-
-/*backgtound*/
-
-#ellipsesGroup1{
-position: absolute;
-left: 60px;
-top: 40px;
-}
-
-#ellipsesGroup2{
-position: absolute;
-right: 60px;
-bottom: 20px;
+width: 85px;
+height: 85px;
 }
 
 .background{
@@ -97,12 +105,10 @@ width:100%;
 /*main block*/
 
 .mainInfo{
-width: 50%;
-height: 100%;
+min-width: max-content;
+min-height: max-content;;
 display: flex;
 flex-direction: column;
-min-width: 390px;
-justify-content: space-evenly;
 margin-left: 30px;  
 }
 
@@ -113,6 +119,9 @@ border-radius: 10px;
 display: flex;
 flex-direction: column;
 box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+min-width: max-content;
+padding: 5px;
+margin: 30px 0px 0px 0px;
 }
 
 /*head contains name and button*/
@@ -126,6 +135,9 @@ border-bottom-style: solid;
 
 .infoBlockContent{
 padding: 10px 15px 10px 15px;
+min-width: max-content;
+margin-block-start: 10px;
+margin-block-end: 10px;	
 }
 
 /*name of info block*/
@@ -148,59 +160,89 @@ color: #999999
 }
 
 /* line with info*/
-.infoBlockContent > div{
+
+.checkbox:before {
+    color: #FF7D84; /* Цвет маркера */
+    content: "\1F534"; /* Сам маркер */
+    padding-right: 5px; /* Расстояние от маркера до текста */
+}
+
+.checkbox.checked:before {
+    color: #73E24D; /* Цвет маркера */
+    content: "\1F534"; /* Сам маркер */
+    padding-right: 5px; /* Расстояние от маркера до текста */
+}
+
+.infoBlockContent li{
+list-style-type: none; /* Прячем исходные маркеры */
 display: flex;
 border-bottom-color: #D8DCE3;
 border-bottom-width: 1px;
 border-bottom-style: solid;
-padding: 5px;
+padding: 7px;
+list-style-type: none; /* Убираем маркеры */
+min-width: max-content;
 }
 
-/* properties*/
-.infoBlockContent > div :first-child{
-width: 40%;
+
+/* property name*/
+.infoBlockContent li :first-child{
+width: 166px;
 font-weight: bold;
-padding-left:5px;
+
+padding-left: 6px;
+    margin-right: 10px;
 }
 
-.propertyName{
-color: #0A5499;
+.property :first-child{
+	color: #0A5499;
+}
+.infoBlockContent li :last-child{
+min-width: max-content;
 }
 /*remove border of last line*/
 .infoBlockContent :last-child{
 border: none;
 }
+/* line in status block (with lightCircle)*/
+
+#status{
+font-size: 18px;
+line-height: 27px;
+
+}
+#status .infoBlockContent 
+{
+margin-block-start: 0px;
+margin-block-end: 0px;	
+}
 
 /* line in status block (with lightCircle)*/
-#status .infoBlockContent > div{
+#status .infoBlockContent > li{
 display: flex;
 border: none;
-padding-left:0px;
+padding: 0px;
 align-items: center;
 }
 
 /*set width for lightCircle*/
-#status .infoBlockContent > div :first-child{
+#status .infoBlockContent > li :first-child{
 width: 11px;
+min-width: auto;
 margin: 0px 5px 0px 0px;
 padding: 0px;
 }
-
 /**/
-.captain{
+.captain :first-child{
 color: #FF7D84;
 }
-
-.engineer{
+.engineer :first-child{
 color: #E69F54;
 }
-
-.doctor{
+.doctor :first-child{
 color: #64D03F;
-
 }
-
-.spaceMarine{
+.spaceMarine :first-child{
 color: #5A95F2;
 }
 
