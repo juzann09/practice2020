@@ -68,7 +68,7 @@
 			
 			
 			function start(){
-				pageChosen = 1;
+				pageChosen = 0;
 				pages = document.getElementsByClassName("page");
 				menu = document.getElementsByClassName("menuItem");
 				setMenuEvents();
