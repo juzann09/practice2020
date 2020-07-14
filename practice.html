@@ -104,119 +104,121 @@
 					</div>
 				</section>
 				<section class="page" id="rocketChoice">
-					<div class="pageTitle">Выбор корабля</div>
-					<section class="rocketCurrent">
-						<section class="infoBlock">
-							<div class="headLine">
-								<div class="blockName">Корабль</div>
-								<div class="button enabled"><a>Собрать ракету</a></div>
-							</div>
-							<div class="rocketInfo">
-								<div class="infoBlockContent">
-									<div class="rocketIcon">
-									<img src="svg/rocket2.svg">
-									</div>
-									<ul>
-										<li class="property">
-											<div>Имя</div>
-											<div>ссс</div>
-										</li>
-										<li class="property">
-											<div>Скорость</div>
-											<div>ввввввввввв</div>
-										</li>
-										<li class="property">
-											<div>Экипаж</div>
-											<div>рпрпрпрпрпрр</div>
-										</li>	
-									</ul>
+					<form name="form"> 
+						<div class="pageTitle">Выбор корабля</div>
+						<section class="rocketCurrent">
+							<section class="infoBlock">
+								<div class="headLine">
+									<div class="blockName">Корабль</div>
+									<div class="button enabled"><a>Собрать ракету</a></div>
 								</div>
-							</div>
-						</section>
-					</section>
-					<section class="rocketCards">
-						<section class="infoBlock rocketCard" id="rocketCard1">
-							<div class="rocketInfo">
-								<div class="infoBlockContent">
-									<div class="rocketIcon">
-										<img src="svg/alienShip.svg">
+								<div class="rocketInfo">
+									<div class="infoBlockContent">
+										<div class="rocketIcon">
+										<img  name="icon" src="svg/rocket2.svg">
+										</div>
+										<ul>
+											<li class="property">
+												<div>Имя</div>
+												<div name="name">name-902</div>
+											</li>
+											<li class="property">
+												<div>Скорость</div>
+												<div name="speed">9921 km/s</div>
+											</li>
+											<li class="property">
+												<div>Экипаж</div>
+												<div name="teamNumber">1010</div>
+											</li>	
+										</ul>
 									</div>
-									<ul>
-										<li class="property">
-											<div>Имя</div>
-											<div>Урског-123</div>
-										</li>
-										<li class="property">
-											<div>Скорость</div>
-											<div>6 км/с</div>
-										</li>
-										<li class="property">
-											<div>Экипаж</div>
-											<div>4</div>
-										</li>	
-									</ul>
 								</div>
-							</div>
-							<div class="choose">
-								<input type="radio" class="radioRocketChoice" id="r1" name="rocketRadio">
-								<label for="r1">Выбрать</label>
-							</div>
+							</section>
 						</section>
-						<section class="infoBlock rocketCard" id="rocketCard2">
-							<div class="rocketInfo">
-								<div class="infoBlockContent">
-									<div class="rocketIcon">
-										<img src="svg/rocket1.svg">
+						<section class="rocketCards">
+							<section class="infoBlock rocketCard">
+								<div class="rocketInfo">
+									<div class="infoBlockContent" id="rocketCard1">
+										<div class="rocketIcon">
+											<img  name="icon" src="svg/alienShip.svg">
+										</div>
+										<ul>
+											<li class="property" >
+												<div>Имя</div>
+												<div name="name">Урског-123</div>
+											</li>
+											<li class="property">
+												<div>Скорость</div>
+												<div name="speed">6 км/с</div>
+											</li>
+											<li class="property">
+												<div>Экипаж</div>
+												<div name="teamNumber">4</div>
+											</li>	
+										</ul>
 									</div>
-									<ul>
-										<li class="property">
-											<div>Имя</div>
-											<div>Урског-123</div>
-										</li>
-										<li class="property">
-											<div>Скорость</div>
-											<div>6 км/с</div>
-										</li>
-										<li class="property">
-											<div>Экипаж</div>
-											<div>3</div>
-										</li>
-									</ul>
 								</div>
-							</div>
-							<div class="choose">
-								<input type="radio" class="radioRocketChoice" id="r2" name="rocketRadio">
-								<label for="r2">Выбрать</label>
-							</div>
-						</section>
-						<section class="infoBlock rocketCard" id="rocketCard3">
-							<div class="rocketInfo">
-								<div class="infoBlockContent">
-									<div class="rocketIcon">
-										<img src="svg/rocket2.svg">
+								<div class="choose">
+									<input type="radio" class="radioRocketChoice" id="r1" name="rocketRadio">
+									<label for="r1">Выбрать</label>
+								</div>
+							</section>
+							<section class="infoBlock rocketCard">
+								<div class="rocketInfo">
+									<div class="infoBlockContent" id="rocketCard2">
+										<div class="rocketIcon">
+											<img  name="icon" src="svg/rocket1.svg">
+										</div>
+										<ul>
+											<li class="property">
+												<div>Имя</div>
+												<div name="name">Урског-123</div>
+											</li>
+											<li class="property">
+												<div>Скорость</div>
+												<div name="speed">6 км/с</div>
+											</li>
+											<li class="property">
+												<div>Экипаж</div>
+												<div name="teamNumber">3</div>
+											</li>
+										</ul>
 									</div>
-									<ul>
-										<li class="property">
-											<div>Имя</div>
-											<div>Сокол-345</div>
-										</li>
-										<li class="property">
-											<div>Скорость</div>
-											<div>8 км/с</div>
-										</li>
-										<li class="property">
-											<div>Экипаж</div>
-											<div>2</div>
-										</li>
-									</ul>
 								</div>
-							</div>
-							<div class="choose">
-								<input type="radio" class="radioRocketChoice" id="r3"  name="rocketRadio">
-								<label for="r3">Выбрать</label>
-							</div>
+								<div class="choose">
+									<input type="radio" class="radioRocketChoice" id="r2" name="rocketRadio">
+									<label for="r2">Выбрать</label>
+								</div>
+							</section>
+							<section class="infoBlock rocketCard">
+								<div class="rocketInfo">
+									<div class="infoBlockContent" id="rocketCard3">
+										<div class="rocketIcon">
+											<img name="icon" src="svg/rocket2.svg">
+										</div>
+										<ul>
+											<li class="property">
+												<div>Имя</div>
+												<div name="name">Сокол-345</div>
+											</li>
+											<li class="property">
+												<div>Скорость</div>
+												<div name="speed">8 км/с</div>
+											</li>
+											<li class="property">
+												<div>Экипаж</div>
+												<div name="teamNumber">2</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="choose">
+									<input type="radio" class="radioRocketChoice" id="r3"  name="rocketRadio">
+									<label for="r3">Выбрать</label>
+								</div>
+							</section>
 						</section>
-					</section>
+					</form> 
 				</section>
 				<section class="page" id="teamChoice">
 					<div class="pageTitle">Сбор команды</div>
