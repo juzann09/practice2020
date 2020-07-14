@@ -377,3 +377,7 @@ padding-left:27px;
 	border-color: #000000;
 	background-color: #FFFFFF;
 }
+
+.radioRocketChoice #r1{
+checked="checked";
+}

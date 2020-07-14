@@ -5,34 +5,23 @@
 					let name = rocketElement.querySelector('[name="name"]').innerHTML;
 					let teamNumber = rocketElement.querySelector('[name="teamNumber"]').innerHTML;
 					let speed = rocketElement.querySelector('[name="speed"]').innerHTML;
-					let icon = rocketElement.querySelector('[name="icon"]').src;
+					let icon = rocketElement.querySelector('[name="icon"]').getAttribute("src");
+					
 					this.teamNumber = teamNumber;
 					this.speed = speed;
 					this.name = name;
 					this.icon = icon;
-				}
-				name;
-				speed;
-				teamNumber;
-				icon;
-				//launch(){}
-			}
-			
-			class RocketCurrent extends Rocket{
-				setParams(rocket){
-					this.name=rocket.name;
-					this.speed=rocket.speed;
-					this.teamNumber=rocket.teamNumber;
-					this.icon=rocket.icon;
+					//console.log(this.icon);
 					this.writeIntoHTML();
 				}
 				writeIntoHTML(){
-					let rocketCurrentBlock = document.querySelector(".rocketCurrent .infoBlock");
-					this.info = rocketCurrentBlock.querySelector('ul');
-					this.info.querySelector('[name="name"]').innerHTML = this.name;
-					this.info.querySelector('[name="speed"]').innerHTML = this.speed;
-					this.info.querySelector('[name="teamNumber"]').innerHTML = this.teamNumber;
-					//this.info.querySelector('[name="icon"]').innerHTML = this._name;
+					let rocketCurrentBlock = document.querySelector(".rocketCurrent");
+					//console.log(rocketCurrentBlock);
+					//this.info = rocketCurrentBlock.querySelector('ul');
+					rocketCurrentBlock.querySelector('[name="name"]').innerHTML = this.name;
+					rocketCurrentBlock.querySelector('[name="speed"]').innerHTML = this.speed;
+					rocketCurrentBlock.querySelector('[name="teamNumber"]').innerHTML = this.teamNumber;
+					rocketCurrentBlock.querySelector('[name="icon"]').setAttribute("src", this.icon);
 				}
 				launch(){
 					console.log('fly');
@@ -50,14 +39,13 @@
 			let rocketCurrent;
 			
 			function setRocketEvents(){
-				rocketCurrent = new RocketCurrent();
 				rocketElements = document.querySelectorAll(".rocketCards .infoBlockContent");
 				rocketRadios = document.getElementsByClassName("radioRocketChoice");
+				chooseRocket(rocketElements[0]);
+				rocketRadios[0].checked="checked";
 				for (let i=0; i < rocketRadios.length; i++){
 					rocketRadios[i].addEventListener('click', function(){
-						let newRocket = new Rocket();
-						newRocket.setParams(rocketElements[i]);
-						rocketCurrent.setParams(newRocket);
+						 chooseRocket(rocketElements[i]);
 					});
 				}
 				let rocketLaunchButton = document.querySelector(".rocketCurrent .button");
@@ -66,6 +54,10 @@
 				});
 			}
 			
+			function chooseRocket(rocketElement){
+				rocketCurrent = new Rocket();
+				rocketCurrent.setParams(rocketElement);
+			}
 			function start(){
 				pageChosen = 1;
 				pages = document.getElementsByClassName("page");
