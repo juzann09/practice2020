@@ -13,7 +13,7 @@
 		<div class="main-panel">
 			<nav>
 				<img class="menuItem inactive" id="earth" src="svg/earth.svg">
-				<img class="menuItem inactive" src="svg/rocket1.svg">
+				<img class="menuItem inactive" src="svg/rocket2.svg">
 				<img class="menuItem inactive" src="svg/astronaut.svg">
 				<img class="menuItem inactive" src="svg/thermometer.svg">
 			</nav>
@@ -23,25 +23,28 @@
 						<section class="infoBlock" id="status">
 						<div class="headLine">
 							<div class="blockName">Статус</div>
-							<div class="button"><a>Поехали!</a></div>
+							<div class="button disabled"><a>Поехали!</a></div>
 						</div>
-						<ul class="infoBlockContent">
-							<li class="checkbox">
-								Ракета выбрана
-							</li>
-							<li class="checkbox">
-								Команда собрана
-							</li>
-							<li class="checkbox checked">
-								Погода - ок
-							</li>
-						</ul>
+						<div class="infoBlockContent">
+							<ul>
+								<li class="checkbox">
+									Ракета выбрана
+								</li>
+								<li class="checkbox">
+									Команда собрана
+								</li>
+								<li class="checkbox checked">
+									Погода - ок
+								</li>
+							</ul>
+						</div>
 						</section>
 						<section class="infoBlock" id="weather">
 							<div class="headLine">
 								<div class="blockName">Погодные условия</div>
 							</div>
-							<ul class="infoBlockContent">
+							<div class="infoBlockContent">
+								<ul>
 								<li class="property">
 									<div>Локация</div>
 									<div>Космодром северный</div>
@@ -59,12 +62,14 @@
 									<div>5м/с, СЗ</div>
 								</li>	
 							</ul>
+							</div>
 						</section>
 						<section class="infoBlock" id="team">
 							<div class="headLine">
 								<div class="blockName">Экипаж</div>
 							</div>
-							<ul class="infoBlockContent">
+							<div class="infoBlockContent">
+								<ul>
 								<li class="captain">
 									<div>Капитан</div>
 									<div>Константин Константинопольский</div>
@@ -82,6 +87,7 @@
 									<div>Константин Константинопольский</div>
 								</li>	
 							</ul>
+							</div>
 						</section>
 					</section>
 					<div class ="illustrations">
@@ -91,7 +97,7 @@
 							</object>
 						</div>
 						<div class="r1">
-							<object class="bigRocketSVG" type="image/svg+xml" data="svg/rocket1.svg">
+							<object class="bigRocketSVG" type="image/svg+xml" data="svg/rocket2.svg">
 							   Your browser does not support SVG
 							</object>
 						</div>
@@ -99,8 +105,117 @@
 				</section>
 				<section class="page" id="rocketChoice">
 					<div class="pageTitle">Выбор корабля</div>
-					<section class="mainInfo">
-						
+					<section class="rocketCurrent">
+						<section class="infoBlock">
+							<div class="headLine">
+								<div class="blockName">Корабль</div>
+								<div class="button enabled"><a>Собрать ракету</a></div>
+							</div>
+							<div class="rocketInfo">
+								<div class="infoBlockContent">
+									<div class="rocketIcon">
+									<img src="svg/rocket2.svg">
+									</div>
+									<ul>
+										<li class="property">
+											<div>Имя</div>
+											<div>ссс</div>
+										</li>
+										<li class="property">
+											<div>Скорость</div>
+											<div>ввввввввввв</div>
+										</li>
+										<li class="property">
+											<div>Экипаж</div>
+											<div>рпрпрпрпрпрр</div>
+										</li>	
+									</ul>
+								</div>
+							</div>
+						</section>
+					</section>
+					<section class="rocketCards">
+						<section class="infoBlock rocketCard" id="rocketCard1">
+							<div class="rocketInfo">
+								<div class="infoBlockContent">
+									<div class="rocketIcon">
+										<img src="svg/alienShip.svg">
+									</div>
+									<ul>
+										<li class="property">
+											<div>Имя</div>
+											<div>Урског-123</div>
+										</li>
+										<li class="property">
+											<div>Скорость</div>
+											<div>6 км/с</div>
+										</li>
+										<li class="property">
+											<div>Экипаж</div>
+											<div>4</div>
+										</li>	
+									</ul>
+								</div>
+							</div>
+							<div class="choose">
+								<input type="radio" class="radioRocketChoice" id="r1" name="rocketRadio">
+								<label for="r1">Выбрать</label>
+							</div>
+						</section>
+						<section class="infoBlock rocketCard" id="rocketCard2">
+							<div class="rocketInfo">
+								<div class="infoBlockContent">
+									<div class="rocketIcon">
+										<img src="svg/rocket1.svg">
+									</div>
+									<ul>
+										<li class="property">
+											<div>Имя</div>
+											<div>Урског-123</div>
+										</li>
+										<li class="property">
+											<div>Скорость</div>
+											<div>6 км/с</div>
+										</li>
+										<li class="property">
+											<div>Экипаж</div>
+											<div>3</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="choose">
+								<input type="radio" class="radioRocketChoice" id="r2" name="rocketRadio">
+								<label for="r2">Выбрать</label>
+							</div>
+						</section>
+						<section class="infoBlock rocketCard" id="rocketCard3">
+							<div class="rocketInfo">
+								<div class="infoBlockContent">
+									<div class="rocketIcon">
+										<img src="svg/rocket2.svg">
+									</div>
+									<ul>
+										<li class="property">
+											<div>Имя</div>
+											<div>Сокол-345</div>
+										</li>
+										<li class="property">
+											<div>Скорость</div>
+											<div>8 км/с</div>
+										</li>
+										<li class="property">
+											<div>Экипаж</div>
+											<div>2</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="choose">
+								<input type="radio" class="radioRocketChoice" id="r3"  name="rocketRadio">
+								<label for="r3">Выбрать</label>
+							</div>
+						</section>
 					</section>
 				</section>
 				<section class="page" id="teamChoice">

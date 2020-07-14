@@ -1,13 +1,13 @@
 			document.addEventListener("DOMContentLoaded", start);
 			
-			let pageChosen=0;
+			let pageChosen=1;
 			let pages = document.getElementsByClassName("page");
 			let menu = document.getElementsByClassName("menuItem");
 			
 			function start(){
 				setMenuEvents();
-				showPage(0);
-				activateIcon(0);
+				showPage(1);
+				activateIcon(1);
 			}
 			
 			function setMenuEvents(){				

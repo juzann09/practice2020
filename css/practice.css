@@ -15,35 +15,9 @@ width: 100%;
 margin: 0px;
 }
 
-main{
-height: max-content;
-min-height: 100%;
-display: flex;
-width: 100%;
-}
-
-.page{
-width: 100%;
-display: none;
-flex-direction: column;
-}
-
-.page.visible{
-display: flex;
-}
-
-#home{
-flex-direction: row;
-}
-
-.pageTitle{
-font-size: 32px;
-line-height: 42px;
-padding: 20px 10px 10px 30px;
-}
-
 .main-panel {
 width: 80%;
+min-width: fit-content;
 height: max-content;
 min-height: 80%;
 z-index: 1;
@@ -55,12 +29,9 @@ margin: auto;
 background: #F4F6F9;
 box-shadow: 5px 7px 40px rgba(0, 0, 0, 0.2);
 border-radius: 50px;
-min-width: max-content;
 overflow: hidden;
 }
 
-
-/*menu*/
 nav {
 display: flex;
 flex-direction: column;
@@ -95,6 +66,38 @@ width: 85px;
 height: 85px;
 }
 
+main{
+height: max-content;
+min-height: 100%;
+display: flex;
+width: 100%;
+}
+
+.page{
+width: 100%;
+display: none;
+flex-direction: column;
+padding: 50px 60px 50px 60px;
+}
+
+.page.visible{
+display: flex;
+}
+
+#home{
+flex-direction: row;
+}
+
+.pageTitle{
+font-size: 32px;
+line-height: 42px;
+margin-bottom: 20px;
+font-size: 48px;
+line-height: 56px;
+}
+
+/*menu*/
+
 .background{
 position: absolute;
 height:100%;
@@ -106,10 +109,9 @@ width:100%;
 
 .mainInfo{
 min-width: max-content;
-min-height: max-content;;
+min-height: max-content;
 display: flex;
-flex-direction: column;
-margin-left: 30px;  
+flex-direction: column; 
 }
 
 /*block itself*/
@@ -120,24 +122,17 @@ display: flex;
 flex-direction: column;
 box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
 min-width: max-content;
-padding: 5px;
-margin: 30px 0px 0px 0px;
+margin: 0px 0px 30px 0px;
+max-width: 520px;
 }
 
 /*head contains name and button*/
 .headLine{
 display: flex;
-padding: 10px 15px 10px 15px;
+padding: 15px 20px 10px 20px;
 border-bottom-color: #D8DCE3;
 border-bottom-width: 1px;
 border-bottom-style: solid;
-}
-
-.infoBlockContent{
-padding: 10px 15px 10px 15px;
-min-width: max-content;
-margin-block-start: 10px;
-margin-block-end: 10px;	
 }
 
 /*name of info block*/
@@ -147,19 +142,38 @@ font-weight: bold;
 align-self: center;
 }
 
+
 .button{
-background: #E4E4E4;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
 border-radius: 10px;
-width: 150px;
+min-width: 150px;
+width: fit-content;
 height: 30px;
 display: flex;
 justify-content: center;
 align-items: center;
-color: #999999;
 font-weight: bold;
 font-size: 16px;
 line-height: 19px;
+}
+
+.button.disabled{
+background: #E4E4E4;
+color: #999999;
+}
+
+.button.enabled{
+background: #73E24D;
+color: #FFFFFF;
+}
+
+.infoBlockContent{
+padding: 10px 25px 15px 20px;
+min-width: max-content;
+margin-block-start: 10px;
+margin-block-end: 10px;
+display: flex;
+flex-direction: row;	
 }
 
 /* line with info*/
@@ -172,6 +186,12 @@ line-height: 19px;
 
 .checkbox.checked:before {
     color: #73E24D; /* Цвет маркера */
+}
+
+.infoBlockContent ul{
+padding-inline-start:0px;
+margin-block-start: 0px;
+margin-block-end: 0px;
 }
 
 .infoBlockContent li{
@@ -190,13 +210,12 @@ min-width: max-content;
 .infoBlockContent li :first-child{
 width: 166px;
 font-weight: bold;
-
 padding-left: 6px;
-    margin-right: 10px;
+margin-right: 10px;
 }
 
 .property :first-child{
-	color: #0A5499;
+color: #0A5499;
 }
 .infoBlockContent li :last-child{
 min-width: max-content;
@@ -261,11 +280,99 @@ transform: rotate(-45deg);
 height: 100%;
 }
 .r0 {
-margin: -60px -10px auto auto;
+margin: -100px -50px auto auto;
 height: 50%
 }
 .r1 {
-margin: auto auto 40px auto;
+margin: auto auto 0px auto;
 height: 35%
 }
 
+
+/* page rocket choice*/
+#rocketChoice .property :first-child{
+width: 81px;
+margin-right: 15px;
+}
+
+.rocketCards{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.rocketInfo{
+display: flex;
+align-items: center;
+} 
+
+.choose{
+background: #D1E1FA;
+height: 38px;
+border-radius: 0px 00px 10px 10px;
+display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rocketIcon{
+margin-left: 0px;
+margin-right:10px;
+    height: 107px;
+    width: 107px;
+}
+
+.rocketIcon img{
+width: 100%;
+}
+
+.rocketCurrent .infoBlock{
+height: 200px;
+width: 500px;
+}
+
+.rocketCurrent li{
+border: none;
+}
+
+.rocketCard{
+width: 353px;
+height: 186px;
+margin-right: 45px;
+}
+
+.rocketInfo .infoBlockContent{
+padding-right:15px;
+padding-left:27px;	
+}
+
+/* radio */
+.radioRocketChoice {
+	margin: 0px;
+	opacity: 0;
+	width: 0px;
+}
+.radioRocketChoice+label{
+	position: relative;
+	cursor: pointer;
+}
+.radioRocketChoice + label:before {
+	content: '';
+	position: absolute;
+	left: -26px;
+	width: 16px;
+	height: 16px;
+	border: 1px solid #FFFFFF;
+	border-radius: 9px;
+}
+
+.radioRocketChoice:checked + label:before {
+	opacity: 1;
+	border-color: #FFFFFF;
+	background-color: #73E24D;
+}
+
+.radioRocketChoice:not(:checked) + label:before {
+	opacity: 1;
+	border-color: #000000;
+	background-color: #FFFFFF;
+}
