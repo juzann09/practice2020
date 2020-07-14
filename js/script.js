@@ -1,65 +1,79 @@
 			class Rocket{
-				constructor(name, speed, teamNumber, icon){
+				constructor(){	
+				}
+				setParams(rocketElement){
+					let name = rocketElement.querySelector('[name="name"]').innerHTML;
+					let teamNumber = rocketElement.querySelector('[name="teamNumber"]').innerHTML;
+					let speed = rocketElement.querySelector('[name="speed"]').innerHTML;
+					let icon = rocketElement.querySelector('[name="icon"]').src;
 					this.teamNumber = teamNumber;
 					this.speed = speed;
 					this.name = name;
 					this.icon = icon;
 				}
-				
-				choose(){
-					//document.form.rocketName="rn";
-					console.log(this);
-				}
-				launch(){}
+				name;
+				speed;
+				teamNumber;
+				icon;
+				//launch(){}
 			}
 			
-			class RocketCurrent{
-				constructor(){
+			class RocketCurrent extends Rocket{
+				setParams(rocket){
+					this.name=rocket.name;
+					this.speed=rocket.speed;
+					this.teamNumber=rocket.teamNumber;
+					this.icon=rocket.icon;
+					this.writeIntoHTML();
+				}
+				writeIntoHTML(){
 					let rocketCurrentBlock = document.querySelector(".rocketCurrent .infoBlock");
 					this.info = rocketCurrentBlock.querySelector('ul');
-					this.head = rocketCurrentBlock.querySelector('.headline');	
+					this.info.querySelector('[name="name"]').innerHTML = this.name;
+					this.info.querySelector('[name="speed"]').innerHTML = this.speed;
+					this.info.querySelector('[name="teamNumber"]').innerHTML = this.teamNumber;
+					//this.info.querySelector('[name="icon"]').innerHTML = this._name;
 				}
-				func(){
-					alert('rocket form found!');
+				launch(){
+					console.log('fly');
 				}
 			}
 
 			document.addEventListener("DOMContentLoaded", start);
 			
-			let pageChosen=1;
-			let pages = document.getElementsByClassName("page");
-			let menu = document.getElementsByClassName("menuItem");
+			let pageChosen;
+			let pages;
+			let menu;
 			
+			let rocketElements;
+			let rocketRadios;
+			let rocketCurrent;
 			
-
-			
-			
-			function setRocketRadiosEvents(){
-				let rocketElements = document.querySelectorAll(".rocketCards .infoBlockContent");
-				let rocketRadios = document.getElementsByClassName("radioRocketChoice");
-				for (let i=0; i < rocketElements.length; i++){
-					console.log(i);
-				}
-				console.log('end');
+			function setRocketEvents(){
+				rocketCurrent = new RocketCurrent();
+				rocketElements = document.querySelectorAll(".rocketCards .infoBlockContent");
+				rocketRadios = document.getElementsByClassName("radioRocketChoice");
 				for (let i=0; i < rocketRadios.length; i++){
 					rocketRadios[i].addEventListener('click', function(){
-						let name = rocketElements[i].querySelector('div [name="name"]').innerHTML;
-						let teamNumber = rocketElements[i].querySelector('[name="teamNumber"]').innerHTML;
-						let speed = rocketElements[i].querySelector('[name="speed"]').innerHTML;
-						let icon = rocketElements[i].querySelector('[name="icon"]').src;
-						let newRocket = new Rocket(name, speed, teamNumber, icon);
-						newRocket.choose();
+						let newRocket = new Rocket();
+						newRocket.setParams(rocketElements[i]);
+						rocketCurrent.setParams(newRocket);
 					});
 				}
+				let rocketLaunchButton = document.querySelector(".rocketCurrent .button");
+				rocketLaunchButton.addEventListener('click', function(){
+					rocketCurrent.launch();
+				});
 			}
 			
 			function start(){
+				pageChosen = 1;
+				pages = document.getElementsByClassName("page");
+				menu = document.getElementsByClassName("menuItem");
 				setMenuEvents();
-				showPage(1);
-				activateIcon(1);
-				//let rocketCurrent1 = new rocketCurrent();
-				//rocketCurrent1.func();
-				setRocketRadiosEvents();
+				showPage(pageChosen);
+				activateIcon(pageChosen);
+				setRocketEvents();
 			}
 			
 			function setMenuEvents(){				
