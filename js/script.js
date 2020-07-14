@@ -22,7 +22,7 @@
 					rocketCurrentBlock.querySelector('[name="speed"]').innerHTML = this.speed;
 					rocketCurrentBlock.querySelector('[name="teamNumber"]').innerHTML = this.teamNumber;
 					rocketCurrentBlock.querySelector('[name="icon"]').setAttribute("src", this.icon);
-					console.log("rocket built");
+					//console.log("rocket built");
 				}
 				launch(){
 					console.log('fly');
@@ -36,29 +36,37 @@
 			let menu;
 			
 			let rocketElements;
+			let rocketElementForBuilding;
 			let rocketRadios;
 			let rocketCurrent;
 			
 			function setRocketEvents(){
 				rocketElements = document.querySelectorAll(".rocketCards .infoBlockContent");
+				rocketElementForBuilding = rocketElements[0];
 				rocketRadios = document.getElementsByClassName("radioRocketChoice");
 				chooseRocket(rocketElements[0]);
+				buildRocket();
 				rocketRadios[0].checked="checked";
 				for (let i=0; i < rocketRadios.length; i++){
-					rocketRadios[i].addEventListener('click', function(){
-						 chooseRocket(rocketElements[i]);
-					});
+					rocketRadios[i].addEventListener('click',() => chooseRocket(rocketElements[i]));
 				}
 				let rocketLaunchButton = document.querySelector(".rocketCurrent .button");
-				rocketLaunchButton.addEventListener('click', function(){
-					rocketCurrent.writeIntoHTML();
-				});
+				rocketLaunchButton.addEventListener('click', buildRocket);
+			}
+			
+			function buildRocket(){
+				rocketCurrent = new Rocket();
+				rocketCurrent.setParams(rocketElementForBuilding);
+				rocketCurrent.writeIntoHTML();
+				console.log("rocket built");
 			}
 			
 			function chooseRocket(rocketElement){
-				rocketCurrent = new Rocket();
-				rocketCurrent.setParams(rocketElement);
+				rocketElementForBuilding = rocketElement;
+				console.log("params are ready");
 			}
+			
+			
 			function start(){
 				pageChosen = 1;
 				pages = document.getElementsByClassName("page");
