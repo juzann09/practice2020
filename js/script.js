@@ -12,7 +12,7 @@
 					this.name = name;
 					this.icon = icon;
 					//console.log(this.icon);
-					this.writeIntoHTML();
+					//this.writeIntoHTML();
 				}
 				writeIntoHTML(){
 					let rocketCurrentBlock = document.querySelector(".rocketCurrent");
@@ -22,6 +22,7 @@
 					rocketCurrentBlock.querySelector('[name="speed"]').innerHTML = this.speed;
 					rocketCurrentBlock.querySelector('[name="teamNumber"]').innerHTML = this.teamNumber;
 					rocketCurrentBlock.querySelector('[name="icon"]').setAttribute("src", this.icon);
+					console.log("rocket built");
 				}
 				launch(){
 					console.log('fly');
@@ -50,7 +51,7 @@
 				}
 				let rocketLaunchButton = document.querySelector(".rocketCurrent .button");
 				rocketLaunchButton.addEventListener('click', function(){
-					rocketCurrent.launch();
+					rocketCurrent.writeIntoHTML();
 				});
 			}
 			
