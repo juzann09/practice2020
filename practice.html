@@ -64,29 +64,29 @@
 							</ul>
 							</div>
 						</section>
-						<section class="infoBlock" id="team">
+						<section class="infoBlock team">
 							<div class="headLine">
 								<div class="blockName">Экипаж</div>
 							</div>
 							<div class="infoBlockContent">
 								<ul>
-								<li class="captain">
-									<div>Капитан</div>
-									<div>Константин Константинопольский</div>
-								</li>
-								<li class="engineer">
-									<div>Борт инженер</div>
-									<div>Константин Константинопольский</div>
-								</li>
-								<li class="doctor">
-									<div>Врач</div>
-									<div>Константин Константинопольский</div>
-								</li>
-								<li class="spaceMarine">
-									<div>Космодесантник</div>
-									<div>Константин Константинопольский</div>
-								</li>	
-							</ul>
+									<li>
+										<div class="captain">Капитан</div>
+										<div>Константин Константинопольский</div>
+									</li>
+									<li>
+										<div class="engineer">Борт инженер</div>
+										<div>Константин Константинопольский</div>
+									</li>
+									<li>
+										<div class="doctor">Врач</div>
+										<div>Константин Константинопольский</div>
+									</li>
+									<li>
+										<div class="spaceMarine">Космодесантник</div>
+										<div>Константин Константинопольский</div>
+									</li>	
+								</ul>
 							</div>
 						</section>
 					</section>
@@ -105,125 +105,99 @@
 				</section>
 				<section class="page" id="rocketChoice">
 					<div class="pageTitle">Выбор корабля</div>
-					<section class="rocketCurrent">
-						<section class="infoBlock">
-							<div class="headLine">
-								<div class="blockName">Корабль</div>
-								<div class="button enabled"><a>Собрать ракету</a></div>
-							</div>
-							<div class="rocketInfo">
-								<div class="infoBlockContent">
-									<div class="rocketIcon">
-										<img name="icon" src="svg/rocket2.svg">
-									</div>
-									<ul>
-										<li class="property">
-											<div>Имя</div>
-											<div name="name">name-902</div>
-										</li>
-										<li class="property">
-											<div>Скорость</div>
-											<div name="speed">9921 km/s</div>
-										</li>
-										<li class="property">
-											<div>Экипаж</div>
-											<div name="teamNumber">1010</div>
-										</li>	
-									</ul>
-								</div>
-							</div>
-						</section>
+					<section class="infoBlock wide current">
+						<div class="headLine">
+							<div class="blockName">Корабль</div>
+							<div class="button enabled"><a>Собрать ракету</a></div>
+						</div>
+						<div> </div>
 					</section>
-					<section class="rocketCards">
-						<section class="infoBlock rocketCard">
-							<div class="rocketInfo">
-								<div class="infoBlockContent" id="rocketCard1">
-									<div class="rocketIcon">
-										<img  name="icon" src="svg/alienShip.svg">
-									</div>
-									<ul>
-										<li class="property" >
-											<div>Имя</div>
-											<div name="name">Урског-123</div>
-										</li>
-										<li class="property">
-											<div>Скорость</div>
-											<div name="speed">6 км/с</div>
-										</li>
-										<li class="property">
-											<div>Экипаж</div>
-											<div name="teamNumber">4</div>
-										</li>	
-									</ul>
-								</div>
-							</div>
-							<div class="choose">
-								<input type="radio" class="radioRocketChoice" id="r1" name="rocketRadio">
-								<label for="r1">Выбрать</label>
-							</div>
-						</section>
-						<section class="infoBlock rocketCard">
-							<div class="rocketInfo">
-								<div class="infoBlockContent" id="rocketCard2">
-									<div class="rocketIcon">
-										<img  name="icon" src="svg/rocket1.svg">
-									</div>
-									<ul>
-										<li class="property">
-											<div>Имя</div>
-											<div name="name">Урског-123</div>
-										</li>
-										<li class="property">
-											<div>Скорость</div>
-											<div name="speed">6 км/с</div>
-										</li>
-										<li class="property">
-											<div>Экипаж</div>
-											<div name="teamNumber">3</div>
-										</li>
-									</ul>
-								</div>
-							</div>
-							<div class="choose">
-								<input type="radio" class="radioRocketChoice" id="r2" name="rocketRadio">
-								<label for="r2">Выбрать</label>
-							</div>
-						</section>
-						<section class="infoBlock rocketCard">
-							<div class="rocketInfo">
-								<div class="infoBlockContent" id="rocketCard3">
-									<div class="rocketIcon">
-										<img name="icon" src="svg/rocket2.svg">
-									</div>
-									<ul>
-										<li class="property">
-											<div>Имя</div>
-											<div name="name">Сокол-345</div>
-										</li>
-										<li class="property">
-											<div>Скорость</div>
-											<div name="speed">8 км/с</div>
-										</li>
-										<li class="property">
-											<div>Экипаж</div>
-											<div name="teamNumber">2</div>
-										</li>
-									</ul>
-								</div>
-							</div>
-							<div class="choose">
-								<input type="radio" class="radioRocketChoice" id="r3"  name="rocketRadio">
-								<label for="r3">Выбрать</label>
-							</div>
-						</section>
+					<section class="cards" id="rocketCards">
+
 					</section>
 				</section>
+				
 				<section class="page" id="teamChoice">
 					<div class="pageTitle">Сбор команды</div>
-					<section class="mainInfo">
-						
+					<section class="chosenRocketAndTeam">
+						<section class="infoBlock wide">
+							<div class="headLine">
+								<div class="blockName">Команда</div>
+								<div class="button enabled"><a>Готово</a></div>
+							</div>
+							<div class="team current infoBlockContent">
+								<ul>
+									<li>
+										<div class="captain">Капитан</div>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<div class="engineer">Борт инженер</div>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<div class="doctor">Врач</div>
+										<ul>
+										</ul>
+									</li>
+									<li>
+										<div class="spaceMarine">Космодесантник</div>
+										<ul>
+										</ul>
+									</li>	
+								</ul>
+							</div>
+						</section>
+						<section class="rocket current infoBlock wide">
+							<div class="headLine">
+								<div class="blockName">Корабль</div>
+							</div>
+							<div></div>
+							
+						</section>
+					</section>
+					<section class="teams cards">
+						<section class="infoBlock wide captain">
+							<div class="headLine">
+								<div class="blockName captain">Капитан</div>
+							</div>
+							<div class="infoBlockContent">
+								<ul>
+								</ul>
+							</div>
+						</section>
+						<section class="infoBlock wide engineer">
+							<div class="headLine">
+								<div class="blockName engineer">Борт инженер</div>
+							</div>
+							<div class="infoBlockContent">
+								<ul>
+								</ul>
+							</div>
+						</section>
+						<section class="infoBlock wide doctor">
+							<div class="headLine">
+								<div class="blockName doctor">Врач</div>
+							</div>
+							<div class="infoBlockContent">
+								<ul>	
+								</ul>
+							</div>
+						</section>
+						<section class="infoBlock wide spaceMarine">
+							<div class="headLine">
+								<div class="blockName spaceMarine">Космодесантник</div>
+							</div>
+							<div class="infoBlockContent">
+								<ul>	
+								</ul>
+							</div>
+						</section>
 					</section>
 				</section>
+				
 				<section class="page" id="weaaterCheck">
 					<div class="pageTitle">Проверка погодных условий</div>
 					<section class="mainInfo">

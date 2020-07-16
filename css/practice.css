@@ -129,6 +129,7 @@ max-width: 520px;
 /*head contains name and button*/
 .headLine{
 display: flex;
+min-height: 30px;
 padding: 15px 20px 10px 20px;
 border-bottom-color: #D8DCE3;
 border-bottom-width: 1px;
@@ -193,6 +194,7 @@ flex-direction: row;
 padding-inline-start:0px;
 margin-block-start: 0px;
 margin-block-end: 0px;
+width: 100%;
 }
 
 .infoBlockContent li{
@@ -204,6 +206,7 @@ border-bottom-style: solid;
 padding: 7px;
 list-style-type: none; /* Убираем маркеры */
 min-width: max-content;
+    align-items: center;
 }
 
 
@@ -219,7 +222,7 @@ margin-right: 10px;
 color: #0A5499;
 }
 .infoBlockContent li :last-child{
-min-width: max-content;
+
 }
 /*remove border of last line*/
 .infoBlockContent :last-child{
@@ -254,16 +257,16 @@ margin: 0px 5px 0px 0px;
 padding: 0px;
 }
 /**/
-.captain :first-child{
+.captain{
 color: #FF7D84;
 }
-.engineer :first-child{
+.engineer{
 color: #E69F54;
 }
-.doctor :first-child{
+.doctor{
 color: #64D03F;
 }
-.spaceMarine :first-child{
+.spaceMarine{
 color: #5A95F2;
 }
 
@@ -291,12 +294,12 @@ height: 35%
 
 
 /* page rocket choice*/
-#rocketChoice .property :first-child{
+.rocketInfo .property :first-child{
 width: 81px;
 margin-right: 15px;
 }
 
-.rocketCards{
+#rocketChoice .cards{
     display: flex;
     flex-wrap: wrap;
 }
@@ -318,30 +321,27 @@ display: flex;
 .rocketIcon{
 margin-left: 0px;
 margin-right:10px;
-    height: 107px;
-    width: 107px;
+height: 107px;
+min-width: 107px;
 }
 
-.rocketIcon img{
-width: 100%;
+.infoBlock.wide{
+width:500px;
+height:203px;
+margin-bottom: 50px;
 }
 
-.rocketCurrent .infoBlock{
-height: 200px;
-width: 500px;
-}
-
-.rocketCurrent li{
+.current li{
 border: none;
 }
 
-.rocketCard{
+#rocketChoice .cards .infoBlock{
 width: 353px;
 height: 186px;
 margin-right: 45px;
 }
 
-.rocketInfo .infoBlockContent{
+.rocketInfo.infoBlockContent{
 padding-right:15px;
 padding-left:27px;	
 }
@@ -378,6 +378,71 @@ padding-left:27px;
 	background-color: #FFFFFF;
 }
 
-.radioRocketChoice #r1{
-checked="checked";
+/* team choice page*/
+
+#teamChoice{
+width: 1100px;
+}
+
+.team.infoBlockContent{
+	margin:0px;
+}
+
+.chosenRocketAndTeam{
+display: grid;
+grid-template-columns: 50% 50%;
+justify-items: center;
+}
+
+.teams.cards{
+display: grid;
+grid-template-columns: 50% 50%;
+grid-template-rows: auto auto;
+justify-items: center;
+}
+
+.teams.cards li{
+color: black;
+}
+
+.infoBlockContent .person .personIcon{
+	height: 40px;
+    width: 40px;
+	margin-left: 0px;
+margin-right:26px;
+}
+
+.infoBlockContent .person{
+	padding: 0px;
+	margin-bottom: 10px;
+border-bottom-color: #D8DCE3;
+border-bottom-width: 1px;
+border-bottom-style: solid;
+}
+
+.teams.cards li :nth-child(2){
+flex:1;
+}	
+
+input[type="checkbox"]{
+height:16px;
+width:16px;
+}	
+
+
+.team.current{
+	padding-top;0px;
+}
+.team.current ul{
+height:21px;
+}
+
+.team.current li div{
+	min-width: 180px;
+}
+
+.team.current img{
+	height: 21px;
+	width: 21px;
+	margin: 0px 8px 0px 0px;
 }
