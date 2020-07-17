@@ -286,10 +286,16 @@ margin: -100px -50px auto auto;
 height: 50%
 }
 .r1 {
+	position: relative;
 margin: auto auto 0px auto;
-height: 35%
+height: 35%;
+transition: top 2s ease;
+top:0;
 }
 
+.animated{
+	top:-120%
+}
 
 /* page rocket choice*/
 .rocketInfo .property :first-child{

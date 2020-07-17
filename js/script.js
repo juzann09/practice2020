@@ -7,6 +7,7 @@ let menu;
 let goButton;
 let statusCheckboxes;
 let homeRocket;
+let homeRocketBlock;
 
 let rockets;
 let rocketElements;
@@ -46,7 +47,9 @@ let weatherButton;
 
 /* functions */
 function launchRocket(){
-	rocketCurrent.launch();
+	homeRocketBlock.classList.toggle('animated',true);
+	disableButton(goButton);
+	//rocketCurrent.launch();
 }
 
 function checkGoButton(){
@@ -358,6 +361,7 @@ function setHomeEvents(){
 	goButton = document.querySelector('#home #go');
 	goButton.addEventListener('click', () => buttonClick(goButton, launchRocket));
 	homeRocket = document.querySelector('#home .illustrations .r1 .bigRocketSVG');
+	homeRocketBlock = document.querySelector('#home .illustrations .r1');
 }
 
 function showPage(number){

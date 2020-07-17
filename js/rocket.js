@@ -22,5 +22,6 @@ class Rocket{
 	}
 	launch(){
 		console.log('fly');
+		
 	}
 }
