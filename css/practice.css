@@ -221,11 +221,9 @@ margin-right: 10px;
 .property :first-child{
 color: #0A5499;
 }
-.infoBlockContent li :last-child{
 
-}
 /*remove border of last line*/
-.infoBlockContent :last-child{
+.infoBlockContent ul>:last-child{
 border: none;
 }
 /* line in status block (with lightCircle)*/
@@ -445,4 +443,23 @@ height:21px;
 	height: 21px;
 	width: 21px;
 	margin: 0px 8px 0px 0px;
+}
+
+/* weather page */
+
+.infoBlock.weather{
+	width: 560px;
+	height: 260px;
+	min-width: fit-content;
+}
+
+.weather input{
+	font-size: 16px;
+line-height: 19px;
+display: flex;
+align-items: center;
+background: #FFFFFF;
+border-radius: 10px;
+border: 1px solid #DEDBDB;
+padding-left: 10px;
 }

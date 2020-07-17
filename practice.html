@@ -4,7 +4,7 @@
 		<meta name="viewport" content="width=device-width" charset="utf-8">
 		<title>Home</title>
 		<link href = "css/practice.css" rel = "stylesheet" type = "text/css">
-			<script src="js/script.js"></script>
+		<script src="js/script.js"></script>
 	</head>
 	<body>
 		<object class="background" type="image/svg+xml" data="svg/background.svg">
@@ -39,29 +39,30 @@
 							</ul>
 						</div>
 						</section>
-						<section class="infoBlock" id="weather">
+						<section class="infoBlock weather">
 							<div class="headLine">
 								<div class="blockName">Погодные условия</div>
 							</div>
+								
 							<div class="infoBlockContent">
 								<ul>
-								<li class="property">
-									<div>Локация</div>
-									<div>Космодром северный</div>
-								</li>
-								<li class="property">
-									<div>Температура</div>
-									<div>+15</div>
-								</li>
-								<li class="property">
-									<div>Влажность</div>
-									<div>какая-то</div>
-								</li>
-								<li class="property">
-									<div>Ветер</div>
-									<div>5м/с, СЗ</div>
-								</li>	
-							</ul>
+									<li class="property">
+										<div>Локация</div>
+										<div class="location"></div>
+									</li>
+										<li class="property">
+											<div>Температура</div>
+											<div class="temperature"></div>
+										</li>
+										<li class="property">
+											<div>Влажность</div>
+											<div class="humidity"></div>
+										</li>
+										<li class="property">
+											<div>Ветер</div>
+											<div class="wind"></div>
+										</li>	
+								</ul>
 							</div>
 						</section>
 						<section class="infoBlock team">
@@ -198,14 +199,40 @@
 					</section>
 				</section>
 				
-				<section class="page" id="weaaterCheck">
+				<section class="page" id="weatherCheck">
 					<div class="pageTitle">Проверка погодных условий</div>
 					<section class="mainInfo">
-						
+						<section class="infoBlock weather">
+							<div class="headLine">
+								<div class="blockName">Погодные условия</div>
+								<div class="button enabled"><a>Проверить</a></div>
+							</div>
+							<div class="infoBlockContent">
+								<ul>
+									<li class="property">
+										<div>Локация</div>
+											<input type="text" placeholder="Введите локацию..">
+									</li>
+									<div>
+										<li class="property">
+											<div>Температура</div>
+											<div class="temperature"></div>
+										</li>
+										<li class="property">
+											<div>Влажность</div>
+											<div class="humidity"></div>
+										</li>
+										<li class="property">
+											<div>Ветер</div>
+											<div class="wind"></div>
+										</li>	
+									</div>
+								</ul>
+							</div>
+						</section>
 					</section>
 				</section>
 			</main>
 		</div>
 	</body>
-
 </html>

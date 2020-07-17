@@ -55,10 +55,46 @@
 				}
 			}
 			
+			class Weather{
+				constructor(locationPlace,temperature,humidity,wind){
+					this.locationPlace=locationPlace;
+					this.temperature=temperature;
+					this.humidity=humidity ;
+					this.wind=wind;
+				}
+				stringLocationOutput(){
+					return `<ul>
+								<li class="property">
+									<div>Локация</div>
+									<div class="location">${this.locationPlace}</div>
+								</li>`;
+				}
+				stringWeatherBlock(output){
+					let stringLocation;
+					if (!output) stringLocation = '';
+					else stringLocation = this.stringLocationOutput();
+					let str =`${stringLocation}
+							<li class="property">
+								<div>Температура</div>
+								<div class="temperature">${this.temperature} &#8451 </div>
+							</li>
+							<li class="property">
+								<div>Влажность</div>
+								<div class="humidity">${this.humidity}%</div>
+							</li>
+							<li class="property">
+								<div>Ветер</div>
+								<div class="wind">${this.wind} м/с</div>
+							</li>`;
+					if (output) str = str + `</ul>`;
+					return str;
+				}
+			}
+			
 			/* variables */
 			document.addEventListener("DOMContentLoaded", start);
 			
-			let pageChosen = 2;
+			let pageChosen = 3;
 			let pages;
 			let menu;
 			
@@ -85,7 +121,55 @@
 			roles.set('engineer','Инженер');
 			roles.set('spaceMarine','Десантник');
 			
+			let prevLocation='';
+			let getWeatherBlock;
+			let setWeatherBlock;
+			let weatherProperties;
+			let locationInput;
+			let locationPlace;
+			let weather;
+			let apiKey='27d68cb21ee3b5093c00da1a66e73421';
+			
 			/* functions */
+			
+			function setLocationEvents(){
+				getWeatherBlock = document.querySelector("#weatherCheck .infoBlockContent");
+				setWeatherBlock = document.querySelector("#home .weather .infoBlockContent");
+				locationInput = getWeatherBlock.querySelector('input');
+				locationInput.addEventListener('change', getNewWeather);
+				weatherProperties=getWeatherBlock.querySelector('ul>div');
+			}
+			
+			async function getNewWeather(){
+				locationPlace=locationInput.value;
+				weather=await getWeather();
+				setWeather();	
+			}
+			
+			async function getWeather(){
+				let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${locationPlace}&units=metric&appid=${apiKey}`);
+				if (response.ok){
+					let json = await response.json();
+					console.log('response ok');
+					let wind = json.wind.speed;
+					let humidity = json.main.humidity;
+					let temperature = json.main.temp;
+					let newWeather = new Weather(locationPlace,temperature,humidity,wind);
+					prevLocation=locationPlace;
+					return newWeather;
+				} 
+				else{
+					locationPlace=prevLocation;
+					locationInput.value=prevLocation;
+					alert("Локация не найдена!");
+				}
+			}
+
+			function setWeather(){
+				console.log(getWeatherBlock);
+				setWeatherBlock.innerHTML=weather.stringWeatherBlock(true);
+				weatherProperties.innerHTML=weather.stringWeatherBlock(false);
+			}
 			
 			/* creates avaliavle team members */
 			function setAvaliableTeamMembers(){
@@ -127,7 +211,7 @@
 			/* adds events for team choice checkboxes */
 			function setPersonChoiceEvents(){
 				let teamChosenIconsBlock = document.querySelector('.chosenRocketAndTeam .team');
-				console.log(teamChosenIconsBlock);
+				//console.log(teamChosenIconsBlock);
 				teamChosenIcons.set("captain",teamChosenIconsBlock.querySelector('.captain+ul'));
 				teamChosenIcons.set("doctor",teamChosenIconsBlock.querySelector('.doctor+ul'));
 				teamChosenIcons.set("engineer",teamChosenIconsBlock.querySelector('.engineer+ul'));
@@ -271,19 +355,6 @@
 				rocketCurrentBlockTeamPage.innerHTML=rocketCurrent.stringCurent(rocketCurrentBlockTeamPage);
 			}
 			
-			function start(){
-				pages = document.getElementsByClassName("page");
-				menu = document.getElementsByClassName("menuItem");
-				setMenuEvents();
-				showPage(pageChosen);
-				activateIcon(pageChosen);
-				setRocketEvents();
-				setAvaliableTeamMembers();
-				writeTeamCardsIntoHTML();
-				setPersonChoiceEvents();
-				setRocketOnTeamPage();
-			}			
-			
 			/* sets menu evemts */
 			function setMenuEvents(){				
 				for (let i=0; i < menu.length; i++){
@@ -316,3 +387,17 @@
 				menu[number].classList.toggle('active',false);
 				menu[number].classList.toggle('inactive',true);
 			}
+			
+			function start(){
+				pages = document.getElementsByClassName("page");
+				menu = document.getElementsByClassName("menuItem");
+				setMenuEvents();
+				showPage(pageChosen);
+				activateIcon(pageChosen);
+				setRocketEvents();
+				setAvaliableTeamMembers();
+				writeTeamCardsIntoHTML();
+				setPersonChoiceEvents();
+				setRocketOnTeamPage();
+				setLocationEvents();
+			}	
