@@ -5,6 +5,9 @@
 		<title>Home</title>
 		<link href = "css/practice.css" rel = "stylesheet" type = "text/css">
 		<script src="js/script.js"></script>
+		<script src="js/rocket.js"></script>
+		<script src="js/teamMember.js"></script>
+		<script src="js/weather.js"></script>
 	</head>
 	<body>
 		<object class="background" type="image/svg+xml" data="svg/background.svg">
@@ -23,7 +26,7 @@
 						<section class="infoBlock" id="status">
 						<div class="headLine">
 							<div class="blockName">Статус</div>
-							<div class="button disabled"><a>Поехали!</a></div>
+							<div class="button disabled" id="go"><a>Поехали!</a></div>
 						</div>
 						<div class="infoBlockContent">
 							<ul>
@@ -33,7 +36,7 @@
 								<li class="checkbox">
 									Команда собрана
 								</li>
-								<li class="checkbox checked">
+								<li class="checkbox">
 									Погода - ок
 								</li>
 							</ul>
@@ -73,19 +76,19 @@
 								<ul>
 									<li>
 										<div class="captain">Капитан</div>
-										<div>Константин Константинопольский</div>
+										<div></div>
 									</li>
 									<li>
 										<div class="engineer">Борт инженер</div>
-										<div>Константин Константинопольский</div>
+										<div></div>
 									</li>
 									<li>
 										<div class="doctor">Врач</div>
-										<div>Константин Константинопольский</div>
+										<div></div>
 									</li>
 									<li>
 										<div class="spaceMarine">Космодесантник</div>
-										<div>Константин Константинопольский</div>
+										<div></div>
 									</li>	
 								</ul>
 							</div>
@@ -98,9 +101,8 @@
 							</object>
 						</div>
 						<div class="r1">
-							<object class="bigRocketSVG" type="image/svg+xml" data="svg/rocket2.svg">
-							   Your browser does not support SVG
-							</object>
+							<img class="bigRocketSVG" src="">
+
 						</div>
 					</div>
 				</section>
@@ -109,7 +111,7 @@
 					<section class="infoBlock wide current">
 						<div class="headLine">
 							<div class="blockName">Корабль</div>
-							<div class="button enabled"><a>Собрать ракету</a></div>
+							<div class="button disabled"><a>Собрать ракету</a></div>
 						</div>
 						<div> </div>
 					</section>
@@ -124,7 +126,7 @@
 						<section class="infoBlock wide">
 							<div class="headLine">
 								<div class="blockName">Команда</div>
-								<div class="button enabled"><a>Готово</a></div>
+								<div class="button disabled"><a>Готово</a></div>
 							</div>
 							<div class="team current infoBlockContent">
 								<ul>
@@ -205,7 +207,7 @@
 						<section class="infoBlock weather">
 							<div class="headLine">
 								<div class="blockName">Погодные условия</div>
-								<div class="button enabled"><a>Проверить</a></div>
+								<div class="button disabled"><a>Проверить</a></div>
 							</div>
 							<div class="infoBlockContent">
 								<ul>
