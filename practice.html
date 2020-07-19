@@ -3,10 +3,22 @@
 	<head>
 		<meta name="viewport" content="width=device-width" charset="utf-8">
 		<title>Home</title>
-		<link href = "css/practice.css" rel = "stylesheet" type = "text/css">
-		<script src="js/script.js"></script>
+		<link href = "css/main.css" rel = "stylesheet" type = "text/css">
+		<link href = "css/menu.css" rel = "stylesheet" type = "text/css">
+		<link href = "css/rocket.css" rel = "stylesheet" type = "text/css">
+		<link href = "css/weather.css" rel = "stylesheet" type = "text/css">
+		<link href = "css/button.css" rel = "stylesheet" type = "text/css">
+		<link href = "css/home.css" rel = "stylesheet" type = "text/css">
+		<link href = "css/infoBlock.css" rel = "stylesheet" type = "text/css">
+		<link href = "css/pages.css" rel = "stylesheet" type = "text/css">
+		<link href = "css/team.css" rel = "stylesheet" type = "text/css">
+		<link href = "css/checkBoxes.css" rel = "stylesheet" type = "text/css">
+		<link href = "css/statusIndicators.css" rel = "stylesheet" type = "text/css">
+		<link href = "css/radios.css" rel = "stylesheet" type = "text/css">
+		<script src="js/home.js"></script>
 		<script src="js/rocket.js"></script>
 		<script src="js/teamMember.js"></script>
+		<script src="js/team.js"></script>
 		<script src="js/weather.js"></script>
 	</head>
 	<body>
@@ -30,13 +42,13 @@
 						</div>
 						<div class="infoBlockContent">
 							<ul>
-								<li class="checkbox">
+								<li class="statusIndicator">
 									Ракета выбрана
 								</li>
-								<li class="checkbox">
+								<li class="statusIndicator">
 									Команда собрана
 								</li>
-								<li class="checkbox">
+								<li class="statusIndicator">
 									Погода - ок
 								</li>
 							</ul>
@@ -53,18 +65,18 @@
 										<div>Локация</div>
 										<div class="location"></div>
 									</li>
-										<li class="property">
-											<div>Температура</div>
-											<div class="temperature"></div>
-										</li>
-										<li class="property">
-											<div>Влажность</div>
-											<div class="humidity"></div>
-										</li>
-										<li class="property">
-											<div>Ветер</div>
-											<div class="wind"></div>
-										</li>	
+									<li class="property">
+										<div>Температура</div>
+										<div class="temperature"></div>
+									</li>
+									<li class="property">
+										<div>Влажность</div>
+										<div class="humidity"></div>
+									</li>
+									<li class="property">
+										<div>Ветер</div>
+										<div class="wind"></div>
+									</li>	
 								</ul>
 							</div>
 						</section>
@@ -74,19 +86,19 @@
 							</div>
 							<div class="infoBlockContent">
 								<ul>
-									<li>
+									<li class="property">
 										<div class="captain">Капитан</div>
 										<div></div>
 									</li>
-									<li>
+									<li class="property">
 										<div class="engineer">Борт инженер</div>
 										<div></div>
 									</li>
-									<li>
+									<li class="property">
 										<div class="doctor">Врач</div>
 										<div></div>
 									</li>
-									<li>
+									<li class="property">
 										<div class="spaceMarine">Космодесантник</div>
 										<div></div>
 									</li>	
@@ -130,22 +142,22 @@
 							</div>
 							<div class="team current infoBlockContent">
 								<ul>
-									<li>
+									<li class="property">
 										<div class="captain">Капитан</div>
 										<ul>
 										</ul>
 									</li>
-									<li>
+									<li class="property">
 										<div class="engineer">Борт инженер</div>
 										<ul>
 										</ul>
 									</li>
-									<li>
+									<li class="property">
 										<div class="doctor">Врач</div>
 										<ul>
 										</ul>
 									</li>
-									<li>
+									<li class="property">
 										<div class="spaceMarine">Космодесантник</div>
 										<ul>
 										</ul>
@@ -215,20 +227,18 @@
 										<div>Локация</div>
 											<input type="text" placeholder="Введите локацию..">
 									</li>
-									<div>
-										<li class="property">
-											<div>Температура</div>
-											<div class="temperature"></div>
-										</li>
-										<li class="property">
-											<div>Влажность</div>
-											<div class="humidity"></div>
-										</li>
-										<li class="property">
-											<div>Ветер</div>
-											<div class="wind"></div>
-										</li>	
-									</div>
+									<li class="property">
+										<div>Температура</div>
+										<div class="temperature"></div>
+									</li>
+									<li class="property">
+										<div>Влажность</div>
+										<div class="humidity"></div>
+									</li>
+									<li class="property">
+										<div>Ветер</div>
+										<div class="wind"></div>
+									</li>	
 								</ul>
 							</div>
 						</section>

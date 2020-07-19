@@ -9,7 +9,7 @@ constructor(name, role, icon){
 }
 
 stringNoIcon(){
-	return `<li>
+	return `<li class="property">
 				<div class = ${this.role}>
 					${roles.get(this.role)}
 				</div>
@@ -25,8 +25,13 @@ stringRoleBlock(role,memberIndex){
 	each role list starts with 0-index*/
 	return `<li class="person">
 		${this.stringIcon()}
-		${this.stringName()}
-		<input type="checkbox" id="${this.id}-${memberIndex}">
+		
+		<label>
+			${this.stringName()}
+			<input type="checkbox" class="customInput" id="${this.id}-${memberIndex}">
+			<span class="customCheckbox"></span>
+			
+		</label>
 		</li>`
 }
 
